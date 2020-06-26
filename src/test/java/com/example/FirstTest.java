@@ -3,6 +3,7 @@ package com.example;
 import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.MobileElement;
 import io.appium.java_client.android.AndroidDriver;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.remote.DesiredCapabilities;
 
@@ -40,6 +41,22 @@ public class FirstTest {
         appiumDriver = new AppiumDriver<MobileElement>(url,desCap);
 
         System.out.println("Hurrah..... the calculator started");
+
+        MobileElement num1 = appiumDriver.findElement(By.id("com.oneplus.calculator:id/digit_1"));
+        MobileElement plus = appiumDriver.findElement(By.id("com.oneplus.calculator:id/op_add"));
+        MobileElement num4 = appiumDriver.findElement(By.id("com.oneplus.calculator:id/digit_4"));
+        MobileElement equals = appiumDriver.findElement(By.id("com.oneplus.calculator:id/eq"));
+        MobileElement result = appiumDriver.findElement(By.className("android.widget.TextView"));
+
+        String resultValue = result.getText();
+        System.out.println(resultValue);
+
+
+         num1.click();
+         plus.click();
+         num4.click();
+         equals.click();
+
 
 
 
